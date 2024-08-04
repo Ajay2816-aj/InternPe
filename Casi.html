@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="casi.css">
+</head>
+<body>
+  
+
+<div class="calculator">
+    <input class="display" id="display" />
+    <div class="buttons">
+      <button>AC</button>
+      <button>DEC</button>
+      <button>+/-<button>
+      <button>%</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>X</button>
+
+      <button>4</button>
+      <button>5</button>
+
+      <button>6</button> <button>/</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button> <button>*</button>
+      <button>.</button>
+      <button>0</button>
+      <button>+</button>
+      <button>-</button>
+      
+      <button class="equal">=</button>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('.buttons button');
+        
+        buttons.forEach(button => {
+          button.addEventListener('click', function() {
+            const value = this.textContent;
+            
+            if (value === '=') {
+              display.value = eval(display.value.replace('X', '*'));
+            } else {
+              display.value += value;
+            }
+          });
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>
